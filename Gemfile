@@ -48,4 +48,7 @@ group :development, :test do
   #Adding Fontawesome
   gem 'font-awesome-rails'
 
+  #Adding Simple Form
+  gem 'simple_form'
+
 end
