@@ -51,4 +51,7 @@ group :development, :test do
   #Adding Simple Form
   gem 'simple_form'
 
+  #Adding Devise
+  gem 'devise'
+
 end
