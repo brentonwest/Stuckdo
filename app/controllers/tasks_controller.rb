@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :change]
 
   # GET /tasks
   # GET /tasks.json
@@ -8,8 +8,12 @@ class TasksController < ApplicationController
     @to_do = current_user.tasks.where(state: "to_do")
     @doing = current_user.tasks.where(state: "doing")
     @done = current_user.tasks.where(state: "done")
-    #From the video - respond_with(@tasks)
-  end
+    #respond_with(@tasks)
+end
+
+def task_params
+  params.require(:task).permit(:content,:state)
+end
 
   # GET /tasks/1
   # GET /tasks/1.json
@@ -62,6 +66,13 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
+    end
+    end
+
+  def change
+    @task.update_attributes(state: params[:state])
+    respond_to do |format|
+      format.html {redirect_to task_path, notice: "Task Update"}
     end
   end
 
