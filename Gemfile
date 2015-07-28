@@ -66,6 +66,6 @@ group :production do
     gem 'pg'
 #    gem 'devise'
     gem 'simple_form'
-    gem 'auto_html'
+#    gem 'auto_html'
     gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   end
