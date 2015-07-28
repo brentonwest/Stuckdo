@@ -54,4 +54,7 @@ group :development, :test do
   #Adding Devise
   gem 'devise'
 
+  #Adding auto html
+  gem 'auto_html'
+
 end
