@@ -57,14 +57,14 @@ gem 'sqlite3'
   gem 'devise'
 
   #Adding auto html
-  gem 'auto_html'
+#  gem 'auto_html'
 
 end
 
 group :production do
     gem 'rails_12factor'
     gem 'pg'
-    gem 'devise'
+#    gem 'devise'
     gem 'simple_form'
     gem 'auto_html'
     gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
